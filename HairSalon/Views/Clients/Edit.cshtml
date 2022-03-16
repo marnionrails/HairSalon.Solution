@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+@using System.Collections.Generic;
+@using HairSalon.Models;
+@model HairSalon.Models.Client;
+
+<h2>Edit Client Details</h2>
+  @using (Html.BeginForm())
+  {
+
+      @Html.LabelFor(model => model.Name)
+      @Html.EditorFor(model => model.Name)
+
+      @Html.LabelFor(model => model.Stylist)
+      @Html.DropDownList("StylistId")
+    
+ 
+      <input type="submit" value="Save">
+
+  }
+<hr />
+<a href='@Url.Action("Index")'><button>View Clients</button></a>

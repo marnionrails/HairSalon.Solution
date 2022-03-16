@@ -1,0 +1,17 @@
+
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client;
+@using HairSalon.Models;
+
+<h2>Client Details</h2>
+<hr />
+<h3>@Html.DisplayFor(model => model.Name) | @Html.DisplayNameFor(model => model.Stylist): @Html.ActionLink($"{@Model.Stylist.Name}", "Details", "Stylists", new { id = Model.StylistId })</h3>
+
+
+<hr />
+<a href='@Url.Action("Delete", new {id = Model.ClientId})'><button>Delete</button></a>
+<a href='@Url.Action("Edit", new { id = Model.ClientId})'><button>Edit</button></a>
+<a href='@Url.Action("Index")'><button>View Clients</button></a>

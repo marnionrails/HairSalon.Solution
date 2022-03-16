@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+@model HairSalon.Models.Client;
+<h2 class>Delete Client</h2>
+<hr />
+<h4 class>Are you sure you'd like to remove @Html.DisplayFor(model => model.Name) as a client?</h4>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete">
+}
