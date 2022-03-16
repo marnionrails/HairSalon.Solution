@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist;
+@using HairSalon.Models;
+
+<h2>Stylist Details</h2>
+<hr />
+<h3>@Html.DisplayFor(model => model.Name)</h3>
+<p>@Html.DisplayNameFor(model => model.Specialty): @Html.DisplayFor(model => model.Specialty)</p>
+
+@if (Model.Clients.Count() == 0)
+{
+  <h5>@Html.DisplayFor(model => model.Name) has no clients! Click "New Client" below to add one.</h5>
+}
+  @for (int i = 0; i < Model.Clients.Count(); i++)
+  {
+      <p>@(i+1))
+      @Html.ActionLink($"{@Model.Clients.ElementAt(i).Name}", "Details", "Clients", new {id = @Model.Clients.ElementAt(i).ClientId})
+      </p>
+      <br>
+  }
+<hr />
+
+<a href='@Url.Action("Create", "Clients")'><button>New Client</button></a>
+<a href='@Url.Action("Delete", new {id = Model.StylistId})'><button>Delete Stylist</button></a>
+<a href='@Url.Action("Edit", new { id = Model.StylistId})'><button>Edit Stylist</button></a>
+<a href='@Url.Action("Index")'><button>Back</button></a>
