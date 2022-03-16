@@ -5,6 +5,9 @@
 ## Description 
 _Epicodus Independent Project to demonstrate the usage of one to many relationships where hair stylists of various specialties can each have many clients, but a client can only have one stylist_
 
+## Schema
+![Schema](HairSalon/assets/images/ClientStylist_Schema.PNG)
+
 ## Technologies Used
 * _C#_
 * _Entity_
